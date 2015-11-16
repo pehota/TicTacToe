@@ -1,0 +1,8 @@
+li.result.list-group-item
+    if model.winner
+        div.ttt-leaderboard-cell.ttt-leaderboard-name= model.winner.name
+        div.ttt-leaderboard-cell.ttt-leaderboard-sign
+            div(data-hook="winner-sign")
+    else
+        div.ttt-leaderboard-cell.ttt-leaderboard-name It's a tie
+        div.ttt-leaderboard-cell.ttt-leaderboard-sign ---

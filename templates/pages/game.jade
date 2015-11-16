@@ -1,0 +1,24 @@
+section.page.game
+    
+    h2= "Tic Tac Toe"
+    
+    div.ttt-game-container(data-hook="game-container")
+        
+        div.ttt-nav-contaier(data-hook="game-nav")
+        
+        div.ttt-result(data-hook="game-msg")= ""
+        
+        div.ttt-cols.row-fluid
+            div.span8
+            
+                div.ttt-section.ttt-players-form-container
+                    div(data-hook="game-players-form")
+                
+                div.ttt-section.span4.ttt-players-list-container
+                    div(data-hook="game-players-list-container")
+                    
+                div.ttt-section.span8.ttt-board-container
+                    div(data-hook="game-board")
+            
+            div.ttt-section.span4.ttt-leaderboard-container
+                div(data-hook="game-leaderboard")

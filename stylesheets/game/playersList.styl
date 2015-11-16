@@ -1,0 +1,13 @@
+.player
+    display: list-item
+    list-style-type: none
+    &.non-active
+        background: #f2f2f2
+        list-style-type: disc
+        font-weight: bold
+        .fa
+            font-weight: normal
+    div
+        display: inline-block
+        &[data-hook~=sign]
+            width: 20%

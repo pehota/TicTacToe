@@ -1,0 +1,5 @@
+table.ttt-board(border=1 align="center")
+    each row in tiles
+        tr
+            each cell in tiles
+                td.ttt-tile(align=center data-hook="makemove" data-index=([row,cell]).join(","))
