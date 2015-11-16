@@ -13,11 +13,3 @@ This app was generated with the [ampersand cli tool](http://ampersandjs.com/lear
 
 See docs: http://ampersandjs.com/
 Curated modules: http://tools.ampersandjs.com/
-
-## Credits
-
-Built by folks at [&yet](http://andyet.com).
-
-## Want a deeper understanding?
-
-Get the book: http://humanjavascript.com
