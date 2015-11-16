@@ -1,6 +1,5 @@
 var View = require("./base");
 var FormView = require("../forms/player");
-var PersonForm = require("../forms/person");
 var PlayerModel = require("../models/player");
 var templates = require("../templates");
 

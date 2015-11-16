@@ -124,7 +124,7 @@
 
     // includes/gameleaderboard.jade compiled template
     templatizer["includes"]["gameleaderboard"] = function tmpl_includes_gameleaderboard() {
-        return '<div class="ttt-leaderboard"><ul><li class="result list-group-item"><div class="ttt-leaderboard-header ttt-leaderboard-name">Winner</div><div class="ttt-leaderboard-header ttt-leaderboard-sign">Played With</div></li></ul><ul data-hook="results-list"></ul></div>';
+        return '<div class="ttt-leaderboard"><h4>Leaderboard</h4><ul><li class="result list-group-item"><div class="ttt-leaderboard-header ttt-leaderboard-name">Winner</div><div class="ttt-leaderboard-header ttt-leaderboard-sign">Played With</div></li></ul><ul data-hook="results-list"></ul></div>';
     };
 
     // includes/gamenav.jade compiled template
@@ -137,21 +137,6 @@
         return '<div><form data-hook="game-players"><fieldset><legend>Enter Players Names</legend><div data-hook="field-container"></div><div class="buttons"><button data-hook="reset" type="submit" class="btn">Play</button></div></fieldset></form></div>';
     };
 
-    // includes/person.jade compiled template
-    templatizer["includes"]["person"] = function tmpl_includes_person() {
-        return '<li class="person list-group-item container"><img data-hook="avatar" width="40" height="40"/><a data-hook="name"></a><span class="btn-group pull-right"> <a data-hook="action-edit" class="btn btn-default">edit </a><a href="#" data-hook="action-delete" class="btn btn-danger">delete</a></span></li>';
-    };
-
-    // includes/settings.jade compiled template
-    templatizer["includes"]["settings"] = function tmpl_includes_settings() {
-        return "<SETIIINGS></SETIIINGS>";
-    };
-
-    // pages/collectionDemo.jade compiled template
-    templatizer["pages"]["collectionDemo"] = function tmpl_pages_collectionDemo() {
-        return '<section class="page pageOne"><h2>Collection demo</h2><p>Intelligently rendering collections can be a bit tricky. </p><p><a href="https://github.com/ampersandjs/ampersand-view">ampersand-view\'s</a> <code>renderCollection()</code> method makes it simple.</p><p>The only code required to manage the collection is:</p><pre><code>this.renderCollection(\n   this.collection, \n   PersonView, \n   this.queryByHook(\'people-list\')\n);</code></pre><h3>People container:</h3><ul data-hook="people-list" class="list-group"></ul><p>Try it by clicking the buttons</p><div class="buttons btn-group"><button data-hook="reset" class="btn btn-default">.reset() </button><button data-hook="fetch" class="btn btn-default">.fetch() </button><button data-hook="shuffle" class="btn btn-default">.shuffle() </button><button data-hook="add" class="btn btn-default">.addRandom()</button><a href="/person/add" class="btn btn-default">Add Person</a></div><p>Events are always managed so you don\'t get any leaks.</p></section>';
-    };
-
     // pages/game.jade compiled template
     templatizer["pages"]["game"] = function tmpl_pages_game(locals) {
         var buf = [];
@@ -159,35 +144,6 @@
         var jade_interp;
         buf.push('<section class="page game"><h2>' + jade.escape(null == (jade_interp = "Tic Tac Toe") ? "" : jade_interp) + '</h2><div data-hook="game-container" class="ttt-game-container"><div data-hook="game-nav" class="ttt-nav-contaier"></div><div data-hook="game-msg" class="ttt-result">' + jade.escape(null == (jade_interp = "") ? "" : jade_interp) + '</div><div class="ttt-cols row-fluid"><div class="span8"><div class="ttt-section ttt-players-form-container"><div data-hook="game-players-form"></div></div><div class="ttt-section span4 ttt-players-list-container"><div data-hook="game-players-list-container"></div></div><div class="ttt-section span8 ttt-board-container"><div data-hook="game-board"></div></div></div><div class="ttt-section span4 ttt-leaderboard-container"><div data-hook="game-leaderboard"></div></div></div></div></section>');
         return buf.join("");
-    };
-
-    // pages/home.jade compiled template
-    templatizer["pages"]["home"] = function tmpl_pages_home(locals) {
-        var buf = [];
-        var jade_mixins = {};
-        var jade_interp;
-        buf.push('<section class="page home"><h2>' + jade.escape(null == (jade_interp = "Tic Tac Toe") ? "" : jade_interp) + '</h2><br/><table border="1" class="ttt-field"><tr><td class="ttt-tile">' + jade.escape(null == (jade_interp = 11) ? "" : jade_interp) + '</td><td class="ttt-tile">' + jade.escape(null == (jade_interp = 12) ? "" : jade_interp) + '</td><td class="ttt-tile">' + jade.escape(null == (jade_interp = 13) ? "" : jade_interp) + '</td></tr><tr><td class="ttt-tile">' + jade.escape(null == (jade_interp = 21) ? "" : jade_interp) + '</td><td class="ttt-tile">' + jade.escape(null == (jade_interp = 22) ? "" : jade_interp) + '</td><td class="ttt-tile">' + jade.escape(null == (jade_interp = 23) ? "" : jade_interp) + '</td></tr><tr><td class="ttt-tile">' + jade.escape(null == (jade_interp = 31) ? "" : jade_interp) + '</td><td class="ttt-tile">' + jade.escape(null == (jade_interp = 32) ? "" : jade_interp) + '</td><td class="ttt-tile">' + jade.escape(null == (jade_interp = 33) ? "" : jade_interp) + "</td></tr></table></section>");
-        return buf.join("");
-    };
-
-    // pages/info.jade compiled template
-    templatizer["pages"]["info"] = function tmpl_pages_info() {
-        return '<section class="page pageTwo"><h2>Simple Page Example</h2><p>This page was rendered by a simple page view file at client/pages/info.js.</p></section>';
-    };
-
-    // pages/personAdd.jade compiled template
-    templatizer["pages"]["personAdd"] = function tmpl_pages_personAdd() {
-        return '<section class="page add-person"><h2>Add Person</h2><p>This form and all behavior is defined by the form view in <code>client/forms/person.js</code>.</p><p>The same form-view is used for both editing and creating new users.</p><form data-hook="person-form"><fieldset data-hook="field-container"></fieldset><div class="buttons"><button data-hook="reset" type="submit" class="btn">Submit</button></div></form></section>';
-    };
-
-    // pages/personEdit.jade compiled template
-    templatizer["pages"]["personEdit"] = function tmpl_pages_personEdit() {
-        return '<section class="page edit-person"><h2>Edit Person</h2><p>This form and all behavior is defined by the form view in <code>client/forms/person.js</code>.</p><p>The same form-view is used for both editing and creating new users.</p><form data-hook="person-form"><fieldset data-hook="field-container"></fieldset><div class="buttons"><button data-hook="reset" type="submit" class="btn">Submit</button></div></form></section>';
-    };
-
-    // pages/personView.jade compiled template
-    templatizer["pages"]["personView"] = function tmpl_pages_personView() {
-        return '<section class="page view-person"><h2 data-hook="name"></h2><img data-hook="avatar" width="80" height="80"/><div class="buttons"><a data-hook="edit" class="btn">Edit</a><button data-hook="delete" class="btn">Delete</button></div></section>';
     };
 
     return templatizer;
