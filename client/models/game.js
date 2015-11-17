@@ -97,6 +97,11 @@ module.exports = AmpersandModel.extend({
 
         this.reset();
 
+        //Make sure "tiles" value is within a reasonable range
+        this.on("change:tiles", this.validateTiles, this);
+        //Save the resukt when the game is over
+        this.on("change:over", this.saveResult, this);
+
         //Listen for the "reset" event of the players collection 
         this.players.on("reset", function() {
             //Game can start when there are more than one players
@@ -104,11 +109,6 @@ module.exports = AmpersandModel.extend({
             //Set the active player
             this.setActivePlayer(this.playerSign);
         }, this);
-
-        //Make sure "tiles" value is within a reasonable range
-        this.on("change:tiles", this.validateTiles, this);
-        //Save the resukt when the game is over
-        this.on("change:over", this.saveResult, this);
     },
 
     /**
@@ -230,10 +230,12 @@ module.exports = AmpersandModel.extend({
      */
     validateTiles: function(model, tiles) {
         var prevTiles = model._previousAttributes.tiles;
-        this.set("tiles", Math.max(prevTiles, Math.min(10, tiles)), {
-            silent: true
-        });
-        this.reset();
+        var newTilesNum = Math.max(3, Math.min(10, tiles));
+
+        if (tiles !== newTilesNum) {
+            this.tiles = newTilesNum;
+            this.reset();
+        }
     },
 
     /**
