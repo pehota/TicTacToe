@@ -12,6 +12,7 @@
     "ampersand-model": "^5.0.3",
     "ampersand-rest-collection": "^4.0.0",
     "ampersand-router": "^3.0.1",
+    "ampersand-select-view": "^4.3.2",
     "ampersand-view": "^7.0.1",
     "ampersand-view-switcher": "^2.0.0",
     "andlog": "^1.0.0",

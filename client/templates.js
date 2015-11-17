@@ -129,7 +129,7 @@
 
     // includes/gamenav.jade compiled template
     templatizer["includes"]["gamenav"] = function tmpl_includes_gamenav() {
-        return '<div class="ttt-nav"><a href="#" data-hook="game-reset" class="ttt-link ttt-reset">New Game</a></div>';
+        return '<div class="ttt-nav"><a href="#" data-hook="game-reset" class="ttt-link ttt-reset">Start a New Game</a></div>';
     };
 
     // includes/gameplayersform.jade compiled template

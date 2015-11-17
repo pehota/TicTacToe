@@ -9,12 +9,12 @@
     .ttt-section
         display: block
         zoom: 1
-        max-height: (tile-size * 3) + 1
+        max-height: ($tile-size * 3) + 1
         &.ttt-players-form-container
             width: 100%
         &.ttt-board-container
             margin-left: 0
-    [data-hook=game-reset], [data-hook=game-msg]
+    [data-hook=game-msg]
         visibility: hidden
     &.ttt-game-over
         [data-hook=game-reset], [data-hook=game-msg]

@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-This app was generated with the [ampersand cli tool](http://ampersandjs.com/learn/quick-start-guide).
+A Tic Tac Toe game built on [Ampersand.js](http://ampersandjs.com)
 
 ## How to run it
 

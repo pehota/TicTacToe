@@ -17,8 +17,14 @@
   display: block;
   margin-bottom: 10px;
 }
+[data-hook="game-players"] label [data-hook=label] {
+  display: inline-block;
+  min-width: 150px;
+  text-align: left;
+}
 [data-hook="game-players"] .form-input {
   margin-bottom: 0;
+  height: 2em;
 }
 [data-hook="game-players"] legend {
   border: 0;
@@ -26,21 +32,62 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
-.ttt-tile {
+.ttt-board .ttt-tile {
   width: 8em;
   height: 8em;
-  padding: 5px;
   text-align: center;
   line-height: 1;
   display: table-cell;
   background-color: #f2f2f2;
 }
-.ttt-tile.ttt-played {
+.ttt-board .ttt-tile.ttt-played {
   background-color: transparent;
 }
-.ttt-tile:before {
+.ttt-board .ttt-tile:before {
   line-height: 1;
   font-size: 6em;
+}
+.ttt-board-4 .ttt-tile {
+  min-width: 6em;
+  min-height: 6em;
+  line-height: 6em;
+  font-size: 9.75px;
+}
+.ttt-board-5 .ttt-tile {
+  min-width: 4.8em;
+  min-height: 4.8em;
+  line-height: 4.8em;
+  font-size: 7.800000000000001px;
+}
+.ttt-board-6 .ttt-tile {
+  min-width: 4em;
+  min-height: 4em;
+  line-height: 4em;
+  font-size: 6.500000000000001px;
+}
+.ttt-board-7 .ttt-tile {
+  min-width: 3.428571428571428em;
+  min-height: 3.428571428571428em;
+  line-height: 3.428571428571428em;
+  font-size: 5.571428571428571px;
+}
+.ttt-board-8 .ttt-tile {
+  min-width: 3em;
+  min-height: 3em;
+  line-height: 3em;
+  font-size: 4.875px;
+}
+.ttt-board-9 .ttt-tile {
+  min-width: 2.666666666666667em;
+  min-height: 2.666666666666667em;
+  line-height: 2.666666666666667em;
+  font-size: 4.333333333333332px;
+}
+.ttt-board-10 .ttt-tile {
+  min-width: 2.4em;
+  min-height: 2.4em;
+  line-height: 2.4em;
+  font-size: 3.9px;
 }
 .ttt-leaderboard-container {
   overflow: hidden;
@@ -91,7 +138,6 @@
 .ttt-game-container .ttt-section.ttt-board-container {
   margin-left: 0;
 }
-.ttt-game-container [data-hook=game-reset],
 .ttt-game-container [data-hook=game-msg] {
   visibility: hidden;
 }
@@ -109,6 +155,7 @@ body {
 body {
   background: #fff;
   box-sizing: border-box;
+  font-size: 13px;
 }
 body * {
   box-sizing: border-box;

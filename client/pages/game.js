@@ -1,3 +1,8 @@
+/**
+ * A game page 
+ * 
+ * @author    dimitar.apostolov
+ */
 var _ = require("lodash");
 var PageView = require("./base");
 var NavView = require("../views/game-nav");
@@ -12,25 +17,24 @@ module.exports = PageView.extend({
 
     template: templates.pages.game,
 
-    props: {
+    session: {
         msg: "string"
     },
 
     bindings: {
+        //Show any user messages 
         "msg": {
             type: "text",
             hook: "game-msg"
         },
-        // "model.ready": {
-        //     type: "booleanClass",
-        //     name: "ttt-game-on",
-        //     hook: "game-container"
-        // },
+        //Hide the user names form and show the board and players list
+        //This can be achieved using a "booleanClass" binding too
         "model.ready": {
             type: "toggle",
             yes: ".ttt-players-list-container, .ttt-board-container",
             no:  ".ttt-players-form-container"
         },
+        //Game over - show the "New Game" link and the game result message
         "model.over": {
             type: "booleanClass",
             name: "ttt-game-over",
@@ -44,10 +48,12 @@ module.exports = PageView.extend({
     },
 
     subviews: {
+        //"Nav" is a bit popmpous for what this subview is but ...
+        //Contains the "New Game" link
         nav: {
             hook: "game-nav",
             
-            // this says we'll wait for `this.model.ready` to be truthy
+            //wait for `this.model.ready` to be truthy
             waitFor: "model.ready",
 
             prepareView: function(el) {
@@ -58,9 +64,10 @@ module.exports = PageView.extend({
                 });
             }
         },
+        //A subview showing the form where players enter their names
         playersForm: {
             hook: "game-players-form",
-            
+            //wait for `this.model`
             waitFor: "model",
 
             prepareView: function(el) {
@@ -71,9 +78,10 @@ module.exports = PageView.extend({
                 });
             }
         },
-        playersDisplay: {
+        //Contains the players list and highlights the player whose turn it is to play
+        playersList: {
             hook: "game-players-list-container",
-            
+            //wait for `this.model.ready` to be truthy
             waitFor: "model.ready",
 
             prepareView: function(el) {
@@ -84,6 +92,7 @@ module.exports = PageView.extend({
                 });
             }
         },
+        //The game board
         board: {
             hook: "game-board",
             

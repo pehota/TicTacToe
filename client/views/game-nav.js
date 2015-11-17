@@ -5,6 +5,13 @@ var templates = require("../templates");
 module.exports = View.extend({
     template: templates.includes.gamenav,
 
+    bindings: {
+        "model.ready": {
+            hook: "game-reset",
+            type: "toggle"
+        }
+    },
+
     events: {
         "click [data-hook=game-reset]": "resetGame"
     },
@@ -16,7 +23,6 @@ module.exports = View.extend({
      */
     resetGame: function(ev) {
         ev.preventDefault();
-        app.navigate("/");
         this.model.reset();
     }
 });

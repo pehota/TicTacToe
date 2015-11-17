@@ -24,7 +24,7 @@ module.exports = View.extend(playerSignMixin, {
     render: function() {
         this.tiles = _.range(0, this.model.tiles);
         this.renderWithTemplate();
-        delete this.tiles;
+        this.addClass(this.el, "ttt-board-" + this.model.tiles);
     },
 
     /**

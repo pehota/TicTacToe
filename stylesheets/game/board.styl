@@ -1,14 +1,40 @@
-tile-size = 8em
-.ttt-tile
-    width: tile-size
-    height: tile-size
-    padding: 5px
-    text-align: center
-    line-height: 1
-    display: table-cell
-    background-color: #F2F2F2
-    &.ttt-played
-        background-color: transparent
-    &:before
-        line-height: 1;
-        font-size: 6em
+@import "../_variables"
+
+$tile-size = 8em
+$board-width = $tile-size * 3
+
+tile-size(tilesNum)
+    .ttt-tile
+        min-width: ($board-width / tilesNum)
+        min-height: ($board-width / tilesNum)
+        line-height: ($board-width / tilesNum)
+        font-size: unit(($fontSM / tilesNum) * 3, "px")
+
+.ttt-board
+    .ttt-tile
+        width: $tile-size
+        height: $tile-size
+        // padding: 5px
+        text-align: center
+        line-height: 1
+        display: table-cell
+        background-color: #F2F2F2
+        &.ttt-played
+            background-color: transparent
+        &:before
+            line-height: 1;
+            font-size: 6em
+    &-4
+        tile-size(4)
+    &-5
+        tile-size(5)
+    &-6
+        tile-size(6)
+    &-7
+        tile-size(7)
+    &-8
+        tile-size(8)
+    &-9
+        tile-size(9)
+    &-10
+        tile-size(10)

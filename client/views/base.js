@@ -6,9 +6,8 @@ var _ = require("lodash");
 module.exports = View.extend({
 
     /**
-     * Description
-     * @param    {type}    name - description
-     * @return   {type}    description
+     * Bind events for model and collection
+     * @see AmpersandView.initialize
      */
     initialize: function(options) {
         this.bindEventsFor("model");
